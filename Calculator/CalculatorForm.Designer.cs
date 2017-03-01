@@ -1,11 +1,16 @@
-﻿namespace Calculator
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Calculator
 {
     partial class CalculatorForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Освободить все используемые ресурсы.
@@ -47,7 +52,7 @@
             this.PercentButton = new System.Windows.Forms.Button();
             this.FourButton = new System.Windows.Forms.Button();
             this.FiveButton = new System.Windows.Forms.Button();
-            this.SexButton = new System.Windows.Forms.Button();
+            this.SixButton = new System.Windows.Forms.Button();
             this.MultiplyButton = new System.Windows.Forms.Button();
             this.OneDivideXButton = new System.Windows.Forms.Button();
             this.MinusButton = new System.Windows.Forms.Button();
@@ -58,6 +63,7 @@
             this.PlusButton = new System.Windows.Forms.Button();
             this.DotButton = new System.Windows.Forms.Button();
             this.ZeroButton = new System.Windows.Forms.Button();
+            this.ExpressionLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,6 +164,7 @@
             this.SqrtButton.TabIndex = 7;
             this.SqrtButton.Text = "√";
             this.SqrtButton.UseVisualStyleBackColor = true;
+            this.SqrtButton.Click += new System.EventHandler(this.SqrtButton_Click);
             // 
             // SevenButton
             // 
@@ -212,6 +219,7 @@
             this.PercentButton.TabIndex = 12;
             this.PercentButton.Text = "%";
             this.PercentButton.UseVisualStyleBackColor = true;
+            this.PercentButton.Click += new System.EventHandler(this.PercentButton_Click);
             // 
             // FourButton
             // 
@@ -235,16 +243,16 @@
             this.FiveButton.UseVisualStyleBackColor = true;
             this.FiveButton.Click += new System.EventHandler(this.FiveButton_Click);
             // 
-            // SexButton
+            // SixButton
             // 
-            this.SexButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SexButton.Location = new System.Drawing.Point(134, 207);
-            this.SexButton.Name = "SexButton";
-            this.SexButton.Size = new System.Drawing.Size(55, 35);
-            this.SexButton.TabIndex = 15;
-            this.SexButton.Text = "6";
-            this.SexButton.UseVisualStyleBackColor = true;
-            this.SexButton.Click += new System.EventHandler(this.SexButton_Click);
+            this.SixButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SixButton.Location = new System.Drawing.Point(134, 207);
+            this.SixButton.Name = "SixButton";
+            this.SixButton.Size = new System.Drawing.Size(55, 35);
+            this.SixButton.TabIndex = 15;
+            this.SixButton.Text = "6";
+            this.SixButton.UseVisualStyleBackColor = true;
+            this.SixButton.Click += new System.EventHandler(this.SixButton_Click);
             // 
             // MultiplyButton
             // 
@@ -266,6 +274,7 @@
             this.OneDivideXButton.TabIndex = 17;
             this.OneDivideXButton.Text = "1/x";
             this.OneDivideXButton.UseVisualStyleBackColor = true;
+            this.OneDivideXButton.Click += new System.EventHandler(this.OneDivideXButton_Click);
             // 
             // MinusButton
             // 
@@ -320,6 +329,7 @@
             this.EqualButton.TabIndex = 27;
             this.EqualButton.Text = "=";
             this.EqualButton.UseVisualStyleBackColor = true;
+            this.EqualButton.Click += new System.EventHandler(this.EqualButton_Click);
             // 
             // PlusButton
             // 
@@ -354,11 +364,20 @@
             this.ZeroButton.UseVisualStyleBackColor = true;
             this.ZeroButton.Click += new System.EventHandler(this.ZeroButton_Click);
             // 
+            // ExpressionLabel
+            // 
+            this.ExpressionLabel.AutoSize = true;
+            this.ExpressionLabel.Location = new System.Drawing.Point(17, 81);
+            this.ExpressionLabel.Name = "ExpressionLabel";
+            this.ExpressionLabel.Size = new System.Drawing.Size(0, 17);
+            this.ExpressionLabel.TabIndex = 28;
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 334);
+            this.Controls.Add(this.ExpressionLabel);
             this.Controls.Add(this.EqualButton);
             this.Controls.Add(this.PlusButton);
             this.Controls.Add(this.DotButton);
@@ -369,7 +388,7 @@
             this.Controls.Add(this.OneButton);
             this.Controls.Add(this.OneDivideXButton);
             this.Controls.Add(this.MultiplyButton);
-            this.Controls.Add(this.SexButton);
+            this.Controls.Add(this.SixButton);
             this.Controls.Add(this.FiveButton);
             this.Controls.Add(this.FourButton);
             this.Controls.Add(this.PercentButton);
@@ -396,35 +415,36 @@
 
         #endregion
 
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ViewMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem EditMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem HelpMenuItem;
-        private System.Windows.Forms.TextBox TextBox;
-        private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button CeButton;
-        private System.Windows.Forms.Button CButton;
-        private System.Windows.Forms.Button PlusMinusButton;
-        private System.Windows.Forms.Button SqrtButton;
-        private System.Windows.Forms.Button SevenButton;
-        private System.Windows.Forms.Button EightButton;
-        private System.Windows.Forms.Button NineButton;
-        private System.Windows.Forms.Button DivideButton;
-        private System.Windows.Forms.Button PercentButton;
-        private System.Windows.Forms.Button FourButton;
-        private System.Windows.Forms.Button FiveButton;
-        private System.Windows.Forms.Button SexButton;
-        private System.Windows.Forms.Button MultiplyButton;
-        private System.Windows.Forms.Button OneDivideXButton;
-        private System.Windows.Forms.Button MinusButton;
-        private System.Windows.Forms.Button ThreeButton;
-        private System.Windows.Forms.Button TwoButton;
-        private System.Windows.Forms.Button OneButton;
-        private System.Windows.Forms.Button EqualButton;
-        private System.Windows.Forms.Button PlusButton;
-        private System.Windows.Forms.Button DotButton;
-        private System.Windows.Forms.Button ZeroButton;
+        private ContextMenuStrip contextMenuStrip1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem ViewMenuItem;
+        private ToolStripMenuItem EditMenuItem;
+        private ToolStripMenuItem HelpMenuItem;
+        private TextBox TextBox;
+        private Button backButton;
+        private Button CeButton;
+        private Button CButton;
+        private Button PlusMinusButton;
+        private Button SqrtButton;
+        private Button SevenButton;
+        private Button EightButton;
+        private Button NineButton;
+        private Button DivideButton;
+        private Button PercentButton;
+        private Button FourButton;
+        private Button FiveButton;
+        private Button SixButton;
+        private Button MultiplyButton;
+        private Button OneDivideXButton;
+        private Button MinusButton;
+        private Button ThreeButton;
+        private Button TwoButton;
+        private Button OneButton;
+        private Button EqualButton;
+        private Button PlusButton;
+        private Button DotButton;
+        private Button ZeroButton;
+        private Label ExpressionLabel;
     }
 }
 
