@@ -201,6 +201,18 @@ namespace Calculator
             TextBox.Text = b.ToString();
         }
 
+        private void PlusMinusButton_Click(object sender, EventArgs e)
+        {
+            if (TextBox.Text[0] != '-')
+            {
+                TextBox.Text = TextBox.Text.Insert(0, "-");
+            }
+            else
+            {
+                TextBox.Text = TextBox.Text.Remove(0,1); 
+            }
+    }
+
         private void backButton_Click(object sender, EventArgs e)
         {
             if (TextBox.Text.Length > 0)

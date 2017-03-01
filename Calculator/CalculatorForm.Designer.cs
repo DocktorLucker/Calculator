@@ -110,13 +110,13 @@ namespace Calculator
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
-            this.TextBox.Size = new System.Drawing.Size(299, 65);
+            this.TextBox.Size = new System.Drawing.Size(299, 74);
             this.TextBox.TabIndex = 2;
             // 
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backButton.Location = new System.Drawing.Point(12, 116);
+            this.backButton.Location = new System.Drawing.Point(12, 125);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(55, 35);
             this.backButton.TabIndex = 3;
@@ -127,7 +127,7 @@ namespace Calculator
             // CeButton
             // 
             this.CeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CeButton.Location = new System.Drawing.Point(73, 116);
+            this.CeButton.Location = new System.Drawing.Point(73, 125);
             this.CeButton.Name = "CeButton";
             this.CeButton.Size = new System.Drawing.Size(55, 35);
             this.CeButton.TabIndex = 4;
@@ -137,7 +137,7 @@ namespace Calculator
             // CButton
             // 
             this.CButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CButton.Location = new System.Drawing.Point(134, 116);
+            this.CButton.Location = new System.Drawing.Point(134, 125);
             this.CButton.Name = "CButton";
             this.CButton.Size = new System.Drawing.Size(55, 35);
             this.CButton.TabIndex = 5;
@@ -148,17 +148,18 @@ namespace Calculator
             // PlusMinusButton
             // 
             this.PlusMinusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PlusMinusButton.Location = new System.Drawing.Point(195, 116);
+            this.PlusMinusButton.Location = new System.Drawing.Point(195, 125);
             this.PlusMinusButton.Name = "PlusMinusButton";
             this.PlusMinusButton.Size = new System.Drawing.Size(55, 35);
             this.PlusMinusButton.TabIndex = 6;
             this.PlusMinusButton.Text = "+-";
             this.PlusMinusButton.UseVisualStyleBackColor = true;
+            this.PlusMinusButton.Click += new System.EventHandler(this.PlusMinusButton_Click);
             // 
             // SqrtButton
             // 
             this.SqrtButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SqrtButton.Location = new System.Drawing.Point(256, 116);
+            this.SqrtButton.Location = new System.Drawing.Point(256, 125);
             this.SqrtButton.Name = "SqrtButton";
             this.SqrtButton.Size = new System.Drawing.Size(55, 35);
             this.SqrtButton.TabIndex = 7;
@@ -367,7 +368,7 @@ namespace Calculator
             // ExpressionLabel
             // 
             this.ExpressionLabel.AutoSize = true;
-            this.ExpressionLabel.Location = new System.Drawing.Point(17, 81);
+            this.ExpressionLabel.Location = new System.Drawing.Point(24, 93);
             this.ExpressionLabel.Name = "ExpressionLabel";
             this.ExpressionLabel.Size = new System.Drawing.Size(0, 17);
             this.ExpressionLabel.TabIndex = 28;
