@@ -129,7 +129,7 @@ namespace Calculator
         {
             a = float.Parse(TextBox.Text);
             TextBox.Text = "0";
-            count = 1;
+            count = 0;
             ExpressionLabel.Text = a + "+";
             znak = true;
         }
