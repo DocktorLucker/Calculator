@@ -100,7 +100,7 @@ namespace Calculator
         private void DivideButton_Click(object sender, EventArgs e)
         {
             a = float.Parse(TextBox.Text);
-            TextBox.Clear();
+            TextBox.Text = "0";
             count = 4;
             ExpressionLabel.Text = a + "/";
             znak = true;
@@ -109,7 +109,7 @@ namespace Calculator
         private void MultiplyButton_Click(object sender, EventArgs e)
         {
             a = float.Parse(TextBox.Text);
-            TextBox.Clear();
+            TextBox.Text = "0";
             count = 3;
             ExpressionLabel.Text = a + "*";
             znak = true;
@@ -118,7 +118,7 @@ namespace Calculator
         private void MinusButton_Click(object sender, EventArgs e)
         {
             a = float.Parse(TextBox.Text);
-            TextBox.Clear();
+            TextBox.Text = "0";
             count = 2;
             ExpressionLabel.Text = a + "-";
             znak = true;
@@ -127,7 +127,7 @@ namespace Calculator
         private void PlusButton_Click(object sender, EventArgs e)
         {
             a = float.Parse(TextBox.Text);
-            TextBox.Clear();
+            TextBox.Text = "0";
             count = 1;
             ExpressionLabel.Text = a + "+";
             znak = true;
