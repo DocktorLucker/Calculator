@@ -95,6 +95,7 @@ namespace Calculator
         private void CButton_Click(object sender, EventArgs e)
         {
             TextBox.Text = "0";
+            ExpressionLabel.Text = string.Empty;
         }
 
         private void DivideButton_Click(object sender, EventArgs e)
