@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -100,7 +101,7 @@ namespace Calculator
 
         private void DivideButton_Click(object sender, EventArgs e)
         {
-            a = float.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 4;
             ExpressionLabel.Text = a + "/";
@@ -109,7 +110,7 @@ namespace Calculator
 
         private void MultiplyButton_Click(object sender, EventArgs e)
         {
-            a = float.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 3;
             ExpressionLabel.Text = a + "*";
@@ -118,16 +119,22 @@ namespace Calculator
 
         private void MinusButton_Click(object sender, EventArgs e)
         {
-            a = float.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 2;
             ExpressionLabel.Text = a + "-";
             znak = true;
         }
 
+        private double DoubleParse(string number)
+        {
+            CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            ci.NumberFormat.CurrencyDecimalSeparator = ".";
+            return double.Parse("0.0", NumberStyles.Any, ci);
+        }
         private void PlusButton_Click(object sender, EventArgs e)
         {
-            a = float.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 0;
             ExpressionLabel.Text = a + "+";
@@ -178,7 +185,7 @@ namespace Calculator
 
         private void PercentButton_Click(object sender, EventArgs e)
         {
-            a = double.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Clear();
             count = 5;
             ExpressionLabel.Text = a + "%";
@@ -187,7 +194,7 @@ namespace Calculator
 
         private void SqrtButton_Click(object sender, EventArgs e)
         {
-            a = double.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Clear();
             count = 6;
             ExpressionLabel.Text = a + "√";
@@ -199,7 +206,7 @@ namespace Calculator
 
         private void OneDivideXButton_Click(object sender, EventArgs e)
         {
-            a = double.Parse(TextBox.Text);
+            a = DoubleParse(TextBox.Text);
             TextBox.Clear();
             count = 6;
             ExpressionLabel.Text = a + "";
