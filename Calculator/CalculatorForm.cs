@@ -146,23 +146,28 @@ namespace Calculator
                 case 1:
                     b = a + double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
+                    ExpressionLabel.Text = String.Empty;
                     break;
                 case 2:
                     b = a - double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
+                    ExpressionLabel.Text = String.Empty;
                     break;
                 case 3:
                     b = a* double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
+                    ExpressionLabel.Text = String.Empty;
                     break;
                 case 4:
                     b = a/ double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
+                    ExpressionLabel.Text = String.Empty;
                     break;
                 case 5:
                     b = double.Parse(TextBox.Text);
                     b = a * (b / 100);
                     TextBox.Text = b.ToString();
+                    ExpressionLabel.Text = String.Empty;
                     break;
 
                 default:
@@ -188,6 +193,7 @@ namespace Calculator
             znak = true;
             b = Math.Sqrt(a);
             TextBox.Text = b.ToString();
+            ExpressionLabel.Text = String.Empty;
         }
 
         private void OneDivideXButton_Click(object sender, EventArgs e)
@@ -199,6 +205,7 @@ namespace Calculator
             znak = true;
             b = 1/a;
             TextBox.Text = b.ToString();
+            ExpressionLabel.Text = String.Empty;
         }
 
         private void PlusMinusButton_Click(object sender, EventArgs e)
