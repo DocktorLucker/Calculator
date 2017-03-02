@@ -145,16 +145,17 @@ namespace Calculator
 
         private void EqualButton_Click(object sender, EventArgs e)
         {
+            
             Calculate();
+            CheckPoints();
             ExpressionLabel.Text = string.Empty;
         }
 
         private void CheckPoints()
         {
-            if (TextBox.Text.Length-1 == '.')
+            if (TextBox.Text[TextBox.Text.Length-1] == '.')
             {
-                last = TextBox.Text.Length - 1;
-                TextBox.Text.Remove(last, '.');
+                TextBox.Text = TextBox.Text.Remove(TextBox.Text.Length - 1);
             }
         }
 
