@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -7,8 +8,9 @@ namespace Calculator
     public partial class CalculatorForm : Form
     {
         private double a, b;
-        private int count;
+        private int count = 0;
         private bool znak = true;
+        private int last = 0;
 
         public CalculatorForm()
         {
@@ -130,13 +132,13 @@ namespace Calculator
         {
             CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             ci.NumberFormat.CurrencyDecimalSeparator = ".";
-            return double.Parse("0.0", NumberStyles.Any, ci);
+            return double.Parse(number, NumberStyles.Any, ci);
         }
         private void PlusButton_Click(object sender, EventArgs e)
         {
             a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
-            count = 0;
+            count = 1;
             ExpressionLabel.Text = a + "+";
             znak = true;
         }
@@ -147,31 +149,46 @@ namespace Calculator
             ExpressionLabel.Text = string.Empty;
         }
 
+        private void CheckPoints()
+        {
+            if (TextBox.Text.Length-1 == '.')
+            {
+                last = TextBox.Text.Length - 1;
+                TextBox.Text.Remove(last, '.');
+            }
+        }
+
         private void Calculate()
         {
             switch (count)
             {
                 case 1:
+                    CheckPoints();
                     b = a + double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
+                                        
                     break;
                 case 2:
+                    CheckPoints();
                     b = a - double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
                 case 3:
+                    CheckPoints();
                     b = a* double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
                 case 4:
+                    CheckPoints();
                     b = a/ double.Parse(TextBox.Text);
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
                 case 5:
+                    CheckPoints();
                     b = double.Parse(TextBox.Text);
                     b = a * (b / 100);
                     TextBox.Text = b.ToString();
