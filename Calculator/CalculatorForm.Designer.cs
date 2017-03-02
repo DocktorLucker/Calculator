@@ -133,6 +133,7 @@ namespace Calculator
             this.CeButton.TabIndex = 4;
             this.CeButton.Text = "CE";
             this.CeButton.UseVisualStyleBackColor = true;
+            this.CeButton.Click += new System.EventHandler(this.CeButton_Click);
             // 
             // CButton
             // 

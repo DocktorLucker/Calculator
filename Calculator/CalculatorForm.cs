@@ -145,7 +145,6 @@ namespace Calculator
 
         private void EqualButton_Click(object sender, EventArgs e)
         {
-            
             Calculate();
             CheckPoints();
             ExpressionLabel.Text = string.Empty;
@@ -245,6 +244,11 @@ namespace Calculator
                 TextBox.Text = TextBox.Text.Remove(0,1); 
             }
     }
+
+        private void CeButton_Click(object sender, EventArgs e)
+        {
+            TextBox.Text = string.Empty;
+        }
 
         private void backButton_Click(object sender, EventArgs e)
         {
