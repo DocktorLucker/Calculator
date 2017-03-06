@@ -551,10 +551,10 @@ namespace Calculator
 
         private void ModButton_Click(object sender, EventArgs e)
         {
-            a = DoubleParse(TextBox.Text);
-            TextBox.Text = "0";
-            count = 18;
-            CalculateForse();
+            if (TextBox.Text[0] == '-')
+            {
+                TextBox.Text = TextBox.Text.Remove(0,1);
+            }
         }
 
         private void LogButton_Click(object sender, EventArgs e)

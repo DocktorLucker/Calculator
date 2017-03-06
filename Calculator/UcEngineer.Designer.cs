@@ -251,7 +251,7 @@
             this.NineButton.TabIndex = 38;
             this.NineButton.Text = "9";
             this.NineButton.UseVisualStyleBackColor = true;
-            this.NineButton.Click += new System.EventHandler(this.DivideButton_Click);
+            this.NineButton.Click += new System.EventHandler(this.NineButton_Click);
             // 
             // EightButton
             // 
