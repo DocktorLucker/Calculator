@@ -333,7 +333,7 @@ namespace Calculator
                     break;
                 case 18:
                     CheckPoints();
-                    
+                    b = Math.Sqrt(Math.Sqrt(a));
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
@@ -570,6 +570,14 @@ namespace Calculator
             a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 20;
+            CalculateForse();
+        }
+
+        private void KubSqrtButton_Click(object sender, EventArgs e)
+        {
+            a = DoubleParse(TextBox.Text);
+            TextBox.Text = "0";
+            count = 18;
             CalculateForse();
         }
 

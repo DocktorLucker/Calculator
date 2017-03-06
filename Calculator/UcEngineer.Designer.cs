@@ -610,6 +610,7 @@
             this.KubSqrtButton.TabIndex = 78;
             this.KubSqrtButton.Text = "³√x";
             this.KubSqrtButton.UseVisualStyleBackColor = true;
+            this.KubSqrtButton.Click += new System.EventHandler(this.KubSqrtButton_Click);
             // 
             // ExpButton
             // 
