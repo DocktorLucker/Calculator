@@ -343,6 +343,7 @@
             // 
             // TextBox
             // 
+            this.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox.Location = new System.Drawing.Point(3, 32);
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
@@ -571,6 +572,7 @@
             // 
             // InvButton
             // 
+            this.InvButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.InvButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.InvButton.Location = new System.Drawing.Point(64, 112);
             this.InvButton.Name = "InvButton";

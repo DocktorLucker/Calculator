@@ -163,6 +163,7 @@ namespace Calculator
 
         private void CheckPoints()
         {
+           
             if (TextBox.Text[TextBox.Text.Length - 1] == '.')
             {
                 TextBox.Text = TextBox.Text.Remove(TextBox.Text.Length - 1);
@@ -194,7 +195,12 @@ namespace Calculator
                     break;
                 case 4:
                     CheckPoints();
-                    b = a/double.Parse(TextBox.Text);
+                    b = double.Parse(TextBox.Text);
+                    if (b == 0)
+                    {
+                        b = 1;
+                    }
+                    b = a /b;
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
@@ -238,7 +244,14 @@ namespace Calculator
                     break;
                 case 2:
                     CheckPoints();
-                    b = Math.Log(a);
+                    if (a == '-')
+                    {
+                        b = Math.Log(a);
+                    }
+                    else
+                    {
+                        b = 0;
+                    }
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
@@ -341,7 +354,14 @@ namespace Calculator
                     break;
                 case 19:
                     CheckPoints();
-                    b = Math.Log(a);
+                    if (a == '-')
+                    {
+                        b = Math.Log(a);
+                    }
+                    else
+                    {
+                        b = 0;
+                    }
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
@@ -429,6 +449,7 @@ namespace Calculator
             a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 2;
+            
             CalculateForse();
         }
         private void IntButton_Click(object sender, EventArgs e)

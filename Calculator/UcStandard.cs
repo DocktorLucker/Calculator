@@ -185,7 +185,12 @@ namespace Calculator
                     break;
                 case 4:
                     CheckPoints();
-                    b = a/double.Parse(TextBox.Text);
+                    b = Double.Parse(TextBox.Text);
+                    if (b == 0)
+                    {
+                        b = 1;
+                    }
+                    b = a/b;
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
