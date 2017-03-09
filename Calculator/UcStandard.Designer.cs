@@ -320,7 +320,7 @@
             // ExpressionLabel
             // 
             this.ExpressionLabel.AutoSize = true;
-            this.ExpressionLabel.Location = new System.Drawing.Point(18, 74);
+            this.ExpressionLabel.Location = new System.Drawing.Point(17, 75);
             this.ExpressionLabel.Name = "ExpressionLabel";
             this.ExpressionLabel.Size = new System.Drawing.Size(0, 17);
             this.ExpressionLabel.TabIndex = 52;

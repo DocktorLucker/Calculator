@@ -249,7 +249,7 @@ namespace Calculator
 
         private void CeButton_Click(object sender, EventArgs e)
         {
-            TextBox.Text = string.Empty;
+            TextBox.Text = "0";
         }
 
         private void UcStandard_Load(object sender, EventArgs e)

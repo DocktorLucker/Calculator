@@ -208,7 +208,14 @@ namespace Calculator
                 case 11:
                     CheckPoints();
                     b = double.Parse(TextBox.Text);
-                    b = Math.Exp(a*Math.Log(b));
+                    b = Math.Pow(a, b);
+                    TextBox.Text = b.ToString();
+                    ExpressionLabel.Text = String.Empty;
+                    break;
+                case 12:
+                    CheckPoints();
+                    b = double.Parse(TextBox.Text);
+                    b = Math.Pow(a, 1 / b);
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
@@ -295,12 +302,7 @@ namespace Calculator
                     TextBox.Text = b.ToString();
                     ExpressionLabel.Text = String.Empty;
                     break;
-                case 12:
-                    CheckPoints();
-                    b = Math.Cos(a);
-                    TextBox.Text = b.ToString();
-                    ExpressionLabel.Text = String.Empty;
-                    break;
+
                 case 13:
                     CheckPoints();
                     b = Math.PI;
@@ -406,7 +408,7 @@ namespace Calculator
 
         private void CeButton_Click(object sender, EventArgs e)
         {
-            TextBox.Text = string.Empty;
+            TextBox.Text = "0";
         }
 
         private void UcStandard_Load(object sender, EventArgs e)
@@ -498,7 +500,6 @@ namespace Calculator
             a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 11;
-            Calculate();
         }
 
         private void SqrtYButton_Click(object sender, EventArgs e)
@@ -506,7 +507,6 @@ namespace Calculator
             a = DoubleParse(TextBox.Text);
             TextBox.Text = "0";
             count = 12;
-            CalculateForse();
         }
 
         private void PiButton_Click(object sender, EventArgs e)
